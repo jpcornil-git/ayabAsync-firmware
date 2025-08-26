@@ -18,6 +18,13 @@
 #define EOL_R_L_PIN 7
 #define EOL_R_DETECT_PIN 8
 
+// GPIO extender
 // MCP23008
 #define MCP23008_ADD0 0x20
 #define MCP23008_ADD1 0x21
+// PCF8574
+#define PCF8574_ADD0 0x20
+#define PCF8574_ADD1 0x21
+// PCF8574A
+#define PCF8574A_ADD0 0x38
+#define PCF8574A_ADD1 0x39
