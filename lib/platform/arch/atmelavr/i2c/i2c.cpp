@@ -27,4 +27,11 @@ void I2c::write(uint8_t device, uint8_t address, uint8_t value) {
   ::i2c_write(value);
   ::i2c_stop();
 }
+
+void I2c::write(uint8_t device, uint8_t value) {
+  ::i2c_start((device << 1) | I2C_WRITE);
+  ::i2c_write(value);
+  ::i2c_stop();
+}
+
 }  // namespace hardwareAbstraction

@@ -1,13 +1,13 @@
 #include "knitter.h"
 
 #include "api.h"
-#include "shield.h"
 
+#include "ayab-hardware.h"
 //----------------------------------------------------------------------------
 // Knitter class
 //----------------------------------------------------------------------------
 
-Knitter::Knitter(hardwareAbstraction::HalInterface *hal) : API(hal) {
+Knitter::Knitter(hardwareAbstraction::HalInterface *hal, io_expander_t expander) : API(hal) {
   // Platform
   _hal = hal;
 
@@ -17,9 +17,8 @@ Knitter::Knitter(hardwareAbstraction::HalInterface *hal) : API(hal) {
 
   _hall_left = new HallSensor(_hal, EOL_L_PIN);
   _hall_right = new HallSensor(_hal, EOL_R_PIN, EOL_R_L_PIN, EOL_R_DETECT_PIN);
-
-  const uint8_t mcp23008_i2c_addresses[2] = {MCP23008_ADD0, MCP23008_ADD1};
-  _solenoids = new Solenoids(_hal, mcp23008_i2c_addresses);
+  
+  _solenoids = new Solenoids(_hal, expander);
 
   // Knitter objects
   _machine = new Machine();

@@ -1,3 +1,5 @@
+#pragma once
+
 // LEDs
 #define LED_A_PIN 5  // green
 #define LED_B_PIN 6  // yellow
@@ -21,3 +23,12 @@
 // MCP23008
 #define MCP23008_ADD0 0x20
 #define MCP23008_ADD1 0x21
+const uint8_t mcp23008_addrs[2] = {MCP23008_ADD0, MCP23008_ADD1};
+
+#define PCF8574_ADD0 0x20
+#define PCF8574_ADD1 0x21
+const uint8_t pcf8574_addrs[2] = {PCF8574_ADD0, PCF8574_ADD1};
+
+#define PCF8574A_ADD0 0x38
+#define PCF8574A_ADD1 0x39
+const uint8_t pcf8574a_addrs[2] = {PCF8574A_ADD0, PCF8574A_ADD1};

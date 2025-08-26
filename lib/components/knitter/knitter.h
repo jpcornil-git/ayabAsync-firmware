@@ -39,7 +39,7 @@ class Config {
 
 class Knitter : protected API {
  public:
-  Knitter(hardwareAbstraction::HalInterface *hal);
+  Knitter(hardwareAbstraction::HalInterface *hal, io_expander_t expander);
   ~Knitter() = default;
 
   // Reset objet's states

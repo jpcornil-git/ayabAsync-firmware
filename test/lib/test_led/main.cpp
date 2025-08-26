@@ -1,7 +1,6 @@
 #include <gtest/gtest.h>
 #include <list>
 
-#include "shield.h"
 #include "led.h"
 #include "mocks/hal_mock.h"
 

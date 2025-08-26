@@ -11,6 +11,8 @@ class I2c : public I2cInterface {
   ~I2c() = default;
 
   void write(uint8_t device, uint8_t address, uint8_t value) override;
+  void write(uint8_t device, uint8_t value) override;
+  
 };
 }  // namespace hardwareAbstraction
 

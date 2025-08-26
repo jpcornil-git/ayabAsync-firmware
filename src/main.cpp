@@ -12,7 +12,7 @@ void setup() {
   // Create Hardware Abstraction Layer (HAL) instance
   hardwareAbstraction::Platform *hal = new hardwareAbstraction::Platform();
   // Main knitter instance
-  knitter = new Knitter(hal);
+  knitter = new Knitter(hal, MCP23008);
 }
 
 /*
