@@ -66,6 +66,10 @@ enum class AYAB_API : uint8_t {
   debugRequestPoke = 0xfa
 };
 
+enum class debugPrintMessageType : uint8_t {
+  i2cWrite = 0x00
+};
+
 class API {
  public:
   API(hardwareAbstraction::HalInterface *hal);
