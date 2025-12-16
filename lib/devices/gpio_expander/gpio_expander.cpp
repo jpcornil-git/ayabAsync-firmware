@@ -9,7 +9,7 @@ GpioExpander::GpioExpander(hardwareAbstraction::HalInterface *hal, const uint8_t
 }
 
 void DummyExpander::update(uint8_t value) {
-  uint8_t message[] = {(uint8_t)AYAB_API::debugPrint, (uint8_t)_i2cAddress, (uint8_t)value, 0};
+  uint8_t message[] = {(uint8_t)AYAB_API::debugPrint, (uint8_t)debugPrintMessageType::i2cWrite, (uint8_t)_i2cAddress, (uint8_t)value, 0};
   size_t size = sizeof(message);
   message[size - 1] = crc8(message, size - 1);
   _hal->packetSerial->send(message, size);
